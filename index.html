@@ -57,21 +57,25 @@
 <li>Alerting the caregiver or patient if medication was missed</li>
 </ul>
 
-<p>We chose to defer:
-Changes in the scheduling as this would require either a flexible dispensing device, or an input device to program a schedule
-A locking mechanism that would prevent the patient from taking doses that weren't for the identified period
-A measuring system to determine whether the medication has been removed from the unit</p>
+<p>We chose to defer:</p>
+
+<ul>
+<li>Changes in the scheduling as this would require either a flexible dispensing device, or an input device to program a schedule</li>
+<li>A locking mechanism that would prevent the patient from taking doses that weren't for the identified period</li>
+<li>A measuring system to determine whether the medication has been removed from the unit</li>
+</ul>
 
 <h2>
 <a id="our-solution" class="anchor" href="#our-solution" aria-hidden="true"><span class="octicon octicon-link"></span></a>Our Solution</h2>
 
-<p>Our solution attempts to be as familiar as possible to the current, passive, blister-pack solution.  We decided to add the following user-interaction to the device:
-<ol>
-  <li>When a scheduled time is reached, the device sounds an alarm</li>
-  <li>This alarm continues until the patient deactivates it by pressing a button, or a threshold period is reached.  This forces the patient to retrieve the device and interact with it.</li>
-  <li>When the alarm sounds, the correct unit becomes illuminated by an LED.  This LED remains illuminated for a period after the alarm is deactivated to allow the patient to identify the correct dose to take, and to retrieve it.</li>
-  <li>If the alarm reaches its cutoff threshold without being interacted with by the patient, a txt message is sent to a predetermined caregiver and/or the patient to alert them that the medication has not been taken.</li>
-</ol></p>
+<p>Our solution attempts to be as familiar as possible to the current, passive, blister-pack solution.  We decided to add the following user-interaction to the device:</p>
+
+<ul>
+<li>When a scheduled time is reached, the device sounds an alarm</li>
+<li>This alarm continues until the patient deactivates it by pressing a button, or a threshold period is reached.  This forces the patient to retrieve the device and interact with it.</li>
+<li>When the alarm sounds, the correct unit becomes illuminated by an LED.  This LED remains illuminated for a period after the alarm is deactivated to allow the patient to identify the correct dose to take, and to retrieve it.</li>
+<li>If the alarm reaches its cutoff threshold without being interacted with by the patient, a txt message is sent to a predetermined caregiver and/or the patient to alert them that the medication has not been taken.</li>
+</ul>
 
 <p>We had to make some assumptions, namely that if the patient had turned the alarm off, that they would subsequently also take the medication.</p>
 
@@ -101,7 +105,7 @@ A measuring system to determine whether the medication has been removed from the
 <h3>
 <a id="software" class="anchor" href="#software" aria-hidden="true"><span class="octicon octicon-link"></span></a>Software</h3>
 
-<p>The source is in the associated GitHub branch and it is quite trivial so the best explanation is via the comments in it.  We leveraged the Time and <a href="https://github.com/kachok/arduino-libraries/tree/master/Time_root/TimeAlarms">Time Alarms</a> libraries to create three example alarm triggers.  We also leveraged the MakerStudio library for the GPRS/GSM shield that is available <a href="https://drive.google.com/folderview?id=0BzxrU4QvH7jEUjJjb3VIdDNzSTg&amp;usp=sharing#list">here</a>.</p>
+<p>The source is in the associated GitHub branch and it is quite trivial so the best explanation is via the comments in it.  We leverage the Time and <a href="https://github.com/kachok/arduino-libraries/tree/master/Time_root/TimeAlarms">Time Alarms</a> libraries to create three example alarm triggers.  We also leveraged the MakerStudio library for the GPRS/GSM shield that is available <a href="https://drive.google.com/folderview?id=0BzxrU4QvH7jEUjJjb3VIdDNzSTg&amp;usp=sharing#list">here</a>.</p>
 
 <p>The alarms are mocked and would require figuring out an RTC solution to make this viable.</p>
 
