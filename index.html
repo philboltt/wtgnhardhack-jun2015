@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>Hardware Hack - Active pill pack by philboltt</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">Hardware Hack - Active pill pack</h1>
+      <h2 class="project-tagline">The little project we put together at the Makers NZ Hutt STEMM Week Hardware Hackathon, on June 6th 2015.</h2>
+      <a href="https://github.com/philboltt/wtgnhardhack-jun2015" class="btn">View on GitHub</a>
+      <a href="https://github.com/philboltt/wtgnhardhack-jun2015/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/philboltt/wtgnhardhack-jun2015/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="hutt-stemm-week-hardware-hackathon-project-active-pill-pack" class="anchor" href="#hutt-stemm-week-hardware-hackathon-project-active-pill-pack" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hutt STEMM Week Hardware Hackathon project: Active pill pack</h1>
+
+<p>This is a short description of the hardware solution that a group of us came up with at the hardware hackathon at the Hutt Library in Lower Hutt, Wellington, NZ, on the 6th of June, 2015.  As a group we came together with a desire to play around with technology and problem solve, but with no other greater agenda.  We were presented with a number of possible problems to play with and decided to have a go at solving this one.  None of the group are healthcare professionals, but the problem was framed by one.</p>
+
+<h2>
+<a id="the-problem" class="anchor" href="#the-problem" aria-hidden="true"><span class="octicon octicon-link"></span></a>The problem:</h2>
+
+<p>For patients it can be difficult to adhere to a medication regime because they must remember to take their medication regularly.  The common solution to this problem is for pharmacists to package prescriptions in individual doses in blister-pack units, with each unit labelled with the date and time that it should be ingested.  This is a passive solution, as it relies on the patient to remember to retrieve the blister-pack at the correct time and ingest the correct unit.  For some patients this is a non-trivial task.</p>
+
+<p>For patients with a reduced mental capacity this is exacerbated further, as they can become disoriented and lose track of both the date and time.  This can lead to further complications, such as skipping doses and then taking multiple doses of medication at a time.  The solution to these problems is manpower intensive and requires having a caregiver present to ensure that the medication is taken appropriately.  </p>
+
+<p>Our challenge was to provide a solution that assists the patient in remembering when to take medication, identifying what medication to take, assists the caregiver in monitoring what medication has been taken, and in particular circumstances alerts the caregiver when medication has been missed.</p>
+
+<h3>
+<a id="considerations" class="anchor" href="#considerations" aria-hidden="true"><span class="octicon octicon-link"></span></a>Considerations:</h3>
+
+<p>Some points to consider were that</p>
+
+<ul>
+<li>often patients in this predicament are on health benefit with restricted income, so the solution would need to be cost-effective</li>
+<li>the medication and frequency of dosage are both moving targets that are revised according to the patients condition</li>
+<li>there is no point in attempting to replace the role of the caregiver as they perform a number of other important functions.  However, the solution should work towards alleviating the number of visits that they would have to make.</li>
+</ul>
+
+<h3>
+<a id="what-we-chose-to-focus-on" class="anchor" href="#what-we-chose-to-focus-on" aria-hidden="true"><span class="octicon octicon-link"></span></a>What we chose to focus on:</h3>
+
+<p>There was only so much we could achieve within the hackathon time period, so we chose to focus on a limited subset of the problem with the notion that it could serve as a small proof-of-concept that could be expanded further.</p>
+
+<p>We identified the critical criteria as:</p>
+
+<ul>
+<li>Alerting the patient that it was time to take medication</li>
+<li>Identifying the correct medication to take</li>
+<li>Alerting the caregiver or patient if medication was missed</li>
+</ul>
+
+<p>We chose to defer:
+Changes in the scheduling as this would require either a flexible dispensing device, or an input device to program a schedule
+A locking mechanism that would prevent the patient from taking doses that weren't for the identified period
+A measuring system to determine whether the medication has been removed from the unit</p>
+
+<h2>
+<a id="our-solution" class="anchor" href="#our-solution" aria-hidden="true"><span class="octicon octicon-link"></span></a>Our Solution</h2>
+
+<p>Our solution attempts to be as familiar as possible to the current, passive, blister-pack solution.  We decided to add the following user-interaction to the device:
+1. When a scheduled time is reached, the device sounds an alarm
+2. This alarm continues until the patient deactivates it by pressing a button, or a threshold period is reached.  This forces the patient to retrieve the device and interact with it.
+3. When the alarm sounds, the correct unit becomes illuminated by an LED.  This LED remains illuminated for a period after the alarm is deactivated to allow the patient to identify the correct dose to take, and to retrieve it.
+4. If the alarm reaches its cutoff threshold without being interacted with by the patient, a txt message is sent to a predetermined caregiver and/or the patient to alert them that the medication has not been taken.</p>
+
+<p>We had to make some assumptions, namely that if the patient had turned the alarm off, that they would subsequently also take the medication.</p>
+
+<h3>
+<a id="hardware" class="anchor" href="#hardware" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hardware</h3>
+
+<p>The hardware we used to prototype this solution was:</p>
+
+<ul>
+<li>An Arduino UNO-esque Makerduino UNO</li>
+<li>An Arduino Electronic Brick Shield (for easy breakout)</li>
+<li>A GPRS/GSM Shield for Arduino UNO R3 </li>
+<li>3x Red EB (Electronic Brick) LED</li>
+<li>An EB Push Button</li>
+<li>An EB Buzzer</li>
+<li>A 9V battery and connector</li>
+<li><p>Connector wires and whatnot</p></li>
+<li><p>All components were from Maker Studio</p></li>
+</ul>
+
+<p>We also tried using an RTC brick (Real Time Clock), but found that it conflicted with the serial communication of the GPRS/GSM shield, and didn't have time to troubleshoot it adequately.</p>
+
+<p>This diagram shows the basic layout though I'd double check the pin assignment if trying to replicate.</p>
+
+<h3>
+<a id="software" class="anchor" href="#software" aria-hidden="true"><span class="octicon octicon-link"></span></a>Software</h3>
+
+<p>The source is in the associated GitHub branch and it is quite trivial so the best explanation is via the comments in it.  We leverage the Time and <a href="https://github.com/kachok/arduino-libraries/tree/master/Time_root/TimeAlarms">Time Alarms</a> libraries to create three example alarm triggers.  We also leveraged the MakerStudio library for the GPRS/GSM shield that is available <a href="https://drive.google.com/folderview?id=0BzxrU4QvH7jEUjJjb3VIdDNzSTg&amp;usp=sharing#list">here</a>.</p>
+
+<p>The alarms are mocked and would require figuring out an RTC solution to make this viable.</p>
+
+<p>The active pill box can be loaded in the same fashion as a conventional, passive blister-pack, and the caregiver can easily identify which doses have not been taken simply by looking at which units still have their contents.</p>
+
+<p>Thanks to Richard Fortune, Walter Langelaar, Eleanor Howick (<a href="https://github.com/elfnor" class="user-mention">@elfnor</a>)and George Marcotte for a fun day of problem solving.</p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/philboltt/wtgnhardhack-jun2015">Hardware Hack - Active pill pack</a> is maintained by <a href="https://github.com/philboltt">philboltt</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
+
