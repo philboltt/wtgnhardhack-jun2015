@@ -56,8 +56,9 @@ a {
 .page-header {
   color: #fff;
   text-align: center;
-  background-color: #159957;
-  background-image: linear-gradient(120deg, #155799, #159957); }
+  background-color: #ACCFCC;
+  // background-image: linear-gradient(120deg, #155799, #159957);
+}
 
 @media screen and (min-width: 64em) {
   .page-header {
@@ -112,7 +113,10 @@ a {
   margin-top: 2rem;
   margin-bottom: 1rem;
   font-weight: normal;
-  color: #159957; }
+  color: #595241;
+    background-color: #ffffff;
+    text-align: center;
+}
 .main-content p {
   margin-bottom: 1em; }
 .main-content code {
@@ -243,3 +247,34 @@ a {
 @media screen and (max-width: 42em) {
   .site-footer {
     font-size: 0.9rem; } }
+
+@font-face {
+    font-family: 'unica_oneregular';
+    src: url('../fonts/unicaone-regular-webfont.eot');
+    src: url('../fonts/unicaone-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/unicaone-regular-webfont.woff2') format('woff2'), url('../fonts/unicaone-regular-webfont.woff') format('woff'), url('../fonts/unicaone-regular-webfont.ttf') format('truetype'), url('../fonts/unicaone-regular-webfont.svg#unica_oneregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'dosisregular';
+    src: url('../fonts/dosis-regular-webfont.eot');
+    src: url('../fonts/dosis-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/dosis-regular-webfont.woff2') format('woff2'), url('../fonts/dosis-regular-webfont.woff') format('woff'), url('../fonts/dosis-regular-webfont.ttf') format('truetype'), url('../fonts/dosis-regular-webfont.svg#dosisregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+body,
+html {
+    font-family: 'dosisregular', sans-serif;
+    background-color: #212538;
+    background-image: url('../img/noisy_grid.png');
+    background-repeat: repeat;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'unica_oneregular', cursive;
+    text-transform: uppercase;
+}

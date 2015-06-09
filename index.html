@@ -20,10 +20,10 @@
     </section>
 
     <section class="main-content">
-      <h1>
-<a id="hutt-stemm-week-hardware-hackathon-project-active-pill-pack" class="anchor" href="#hutt-stemm-week-hardware-hackathon-project-active-pill-pack" aria-hidden="true"><span class="octicon octicon-link"></span></a>Hutt STEMM Week Hardware Hackathon project: Active pill pack</h1>
 
 <p>This is a short description of the hardware solution that a group of us came up with at the hardware hackathon at the Hutt Library in Lower Hutt, Wellington, NZ, on the 6th of June, 2015.  As a group we came together with a desire to play around with technology and problem solve, but with no other greater agenda.  We were presented with a number of possible problems to play with and decided to have a go at solving this one.  None of the group are healthcare professionals, but the problem was framed by one.</p>
+
+      <p><img src="img/hackin.jpg" alt="hackin away"></p>
 
 <h2>
 <a id="the-problem" class="anchor" href="#the-problem" aria-hidden="true"><span class="octicon octicon-link"></span></a>The problem:</h2>
@@ -101,12 +101,15 @@
 
 <p>This diagram shows the basic layout though I'd double check the pin assignment if trying to replicate.</p>
 
-<p><img src="hardwareSchematic.jpg" alt="hardware schematic"></p>
+<div style="text-align: center" ><img src="img/hardwareSchematic.jpg" alt="hardware schematic"></div>
 
+      <p>We managed to mockup a little container in cardboard with a lower area housing the electronics, button and buzzer, with three pill units on top, each with an led on it.  Unfortunately we forgot to take a photograph of this :)</p>
 <h3>
 <a id="software" class="anchor" href="#software" aria-hidden="true"><span class="octicon octicon-link"></span></a>Software</h3>
 
 <p>The source is in the associated GitHub branch and it is quite trivial so the best explanation is via the comments in it.  We leverage the Time and <a href="https://github.com/kachok/arduino-libraries/tree/master/Time_root/TimeAlarms">Time Alarms</a> libraries to create three example alarm triggers.  We also leveraged the MakerStudio library for the GPRS/GSM shield that is available <a href="https://drive.google.com/folderview?id=0BzxrU4QvH7jEUjJjb3VIdDNzSTg&amp;usp=sharing#list">here</a>.</p>
+
+      <div style="text-align: center" ><img height=600 src="img/txtMsg.jpg" alt="txt msg"></div>
 
 <p>The alarms are mocked and would require figuring out an RTC solution to make this viable.</p>
 
